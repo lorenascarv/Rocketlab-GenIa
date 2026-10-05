@@ -49,7 +49,7 @@ O agente foi implementado **sem framework de agentes**: o loop de *tool calling*
  
 1. Python 3.11 ou superior.
 2. Uma conta na [OpenRouter](https://openrouter.ai) e uma API key (*Settings → Keys → Create Key*).
-3. O arquivo `cinerocket.db`, disponibilizado na pasta compartilhada da atividade.
+3. O arquivo `cinerocket-db.zip`, disponibilizado na pasta compartilhada da atividade.
 ### Passo a passo (execução local)
  
 ```bash
@@ -66,7 +66,7 @@ venv\Scripts\activate          # Windows
 pip install -r requirements.txt
 ```
  
-4. Coloque o arquivo cinerocket-db.zip, sem extrair, na raiz do projeto (mesma pasta do notebook). Ao ser executado, o notebook extrai o zip para a pasta cinerocket_extracted/ e localiza o arquivo .db dentro dela automaticamente. Se não houver zip, o notebook procura um arquivo .db solto na mesma pasta; se não encontrar nada, interrompe com uma mensagem indicando o que falta.
+4. Baixe o arquivo **`cinerocket-db.zip`** na pasta compartilhada da atividade e coloque-o, sem extrair, na raiz do projeto (mesma pasta do notebook). O zip não está versionado neste repositório porque tem 251 MB e excede o limite de 100 MB por arquivo do GitHub. Ao ser executado, o notebook extrai o zip para a pasta `cinerocket_extracted/` e localiza o arquivo `.db` dentro dela automaticamente. Se não houver zip, o notebook procura um arquivo `.db` solto na mesma pasta; se não encontrar nada, interrompe com uma mensagem indicando o que falta.
 5. Crie um arquivo `.env` na raiz com a sua chave:
 ```
 OPENROUTER_API_KEY=sua_chave_aqui
@@ -180,8 +180,9 @@ Por causa do limite de 50 requisições diárias, a avaliação do agente foi di
 ```
 .
 ├── agente_cinedata.ipynb   # notebook principal (agente, guardrails, gabarito, interface)
-├── cinerocket-db.zip       # zip com o banco SQLite da camada Gold (fornecido na atividade)
+├── cinerocket-db.zip       # NÃO versionado (251 MB): baixar da pasta compartilhada da atividade
 ├── cinerocket_extracted/   # criada pelo notebook ao extrair o zip (gerada automaticamente)
 ├── requirements.txt        # dependências
+├── .gitignore
 └── README.md
 ```
