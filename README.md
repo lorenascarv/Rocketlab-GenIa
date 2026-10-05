@@ -163,7 +163,8 @@ Legenda: ✅ resultado do agente coincide com o gabarito · ⚠️ resposta corr
 
 **Nota sobre a pergunta 5:** o agente percebeu que notas `0.0` na base representam ausência de nota, e devolveu dois resultados: um incluindo as notas `0.0` e outro, mais realista, sem elas.
 
-Evidências do chat:
+### Evidências do chat:
+
 <img width="706" height="396" alt="image" src="https://github.com/user-attachments/assets/7e9996c4-7f7a-4c6d-9959-74c0aa061420" />
 <img width="1366" height="622" alt="image" src="https://github.com/user-attachments/assets/9ae6f713-f9e5-45f0-aa51-d6dbaa27665a" />
 <img width="1365" height="598" alt="image" src="https://github.com/user-attachments/assets/c60a9af4-813d-461b-aca4-9f598e40d9f3" />
