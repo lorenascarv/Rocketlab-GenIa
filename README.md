@@ -54,8 +54,8 @@ O agente foi implementado **sem framework de agentes**: o loop de *tool calling*
  
 ```bash
 # 1. Clone o repositório
-git clone <URL_DO_REPOSITORIO>
-cd <NOME_DA_PASTA>
+git clone https://github.com/lorenascarv/Rocketlab-GenIa.git
+cd Rocketlab-GenIa
  
 # 2. Crie e ative um ambiente virtual
 python -m venv venv
