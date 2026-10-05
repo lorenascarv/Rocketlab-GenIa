@@ -141,23 +141,28 @@ O conjunto de avaliação foi construído em duas etapas:
  
 1. **Gabarito:** para cada uma das 14 perguntas de exemplo do enunciado foi escrito um SQL de referência, executado diretamente no banco (sem uso de LLM e sem consumir a cota de requisições).
 2. **Agente:** as perguntas são feitas ao agente, e o SQL gerado e a resposta são comparados com o gabarito.
+
+Legenda: ✅ resultado do agente coincide com o gabarito · ⚠️ resposta correta, mas com SQL diferente do gabarito · ❌ difere do gabarito · ➖ não testada.
+
 | # | Categoria | Pergunta | Resultado do agente |
 |---|-----------|----------|---------------------|
 | 1 | Bilheteria e finanças | Top 10 filmes com maior receita em R$ | ✅ |
 | 2 | Bilheteria e finanças | Lucro médio por gênero (apenas filmes com receita informada) | ✅ |
 | 3 | Bilheteria e finanças | Filmes com maior margem de lucro | ✅ |
 | 4 | Popularidade e engajamento | Os 5 filmes mais populares | ✅ |
-| 5 | Popularidade e engajamento | Maior divergência entre nota TMDB e IMDb | ✅ (Interessante que o agente entendeu que as notas 0.0 eram nulas e deu dois resultados, um com as notas 0.0 e outro mais realista) |
-| 6 | Popularidade e engajamento | Nota média IMDb por ano de lançamento | ❌ Não testado |
+| 5 | Popularidade e engajamento | Maior divergência entre nota TMDB e IMDb | ✅ (ver nota abaixo) |
+| 6 | Popularidade e engajamento | Nota média IMDb por ano de lançamento | ➖ |
 | 7 | Elenco e equipe | Ator com mais participações nos últimos 5 anos | ✅ |
 | 8 | Elenco e equipe | Diretores com maior nota média (mínimo de 5 filmes) | ✅ |
 | 9 | Elenco e equipe | Dupla ator–diretor que mais trabalhou junta | ✅ |
-| 10 | Gêneros e produtoras | Quantidade de filmes por gênero | ❌ Não testado |
+| 10 | Gêneros e produtoras | Quantidade de filmes por gênero | ➖ |
 | 11 | Gêneros e produtoras | Produtora com maior lucro total | ✅ |
 | 12 | Gêneros e produtoras | Gênero com maior margem de lucro média | ✅ |
 | 13 | Avaliações de usuários | Filmes mais avaliados pelos usuários | ✅ |
-| 14 | Avaliações de usuários | Maior divergência entre nota dos usuários e nota IMDb | ❌ Não testado |
- 
+| 14 | Avaliações de usuários | Maior divergência entre nota dos usuários e nota IMDb | ➖ |
+
+**Nota sobre a pergunta 5:** o agente percebeu que notas `0.0` na base representam ausência de nota, e devolveu dois resultados: um incluindo as notas `0.0` e outro, mais realista, sem elas.
+
 Evidências do chat:
 <img width="706" height="396" alt="image" src="https://github.com/user-attachments/assets/7e9996c4-7f7a-4c6d-9959-74c0aa061420" />
 <img width="1366" height="622" alt="image" src="https://github.com/user-attachments/assets/9ae6f713-f9e5-45f0-aa51-d6dbaa27665a" />
